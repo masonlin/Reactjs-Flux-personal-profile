@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <script src="./build/react.js"></script>
+		<script src="./build/react-dom.js"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script> -->
+    <script src="./build/browser.min.js"></script>
+	</head>
+	<body>
+    <secion>
+      <div id="R_name"></div>
+    </section>
+
+	    <script type="text/babel">
+
+
+      var RESTful_myname = React.createClass({
+        _name: "",
+        getInitialState: function(){
+          return {
+            call_step: 1
+          };
+        },
+        componentDidMount: function(){
+          this.setState({
+            call_step: 2
+          });
+          this.autoSubmit();  //直接向後端要資料
+        },
+
+        autoSubmit: function(){
+          var xhr = new XMLHttpRequest();
+          //xhr.onreadystatechange = processRequest;
+          xhr.onreadystatechange = function(){
+                      if (xhr.readyState == 4) {
+                        if (xhr.status == 0 || xhr.status == 200) {
+                          this._name = xhr.responseText;
+                        } else {
+                          this._name='wrong';
+                        }
+                      }else {
+                        this._name='';
+                      }
+
+                      this.setState({call_step: xhr.readyState});
+                    }.bind(this);      //<--- bind this 後，這個匿名函式裡才能使用 this.setState
+
+          xhr.open("GET", "http://127.0.0.1:8080/user/0", true);  //<--- true 表異步
+          xhr.send();
+
+          var status = xhr.status;
+          var readystate = xhr.readyState;
+          var data;
+        },
+
+        render: function(){
+          //this.handleChange(this);
+          console.log("State: " + this.state.call_step);
+          var state = this.state.call_step;
+          var name = this._name;
+          console.log("name: " + name);
+          // console.log("2:" + rState);
+          return (
+            <div>
+              <p>TEST</p>
+              <p>{state}</p>
+              <p>{name}</p>
+            </div>
+          );
+        }
+      });
+
+      ReactDOM.render(<RESTful_myname />, document.getElementById("R_name"));
+
+
+      //document.getElementById("autosubmit").submit();
+
+			</script>
+
+
+
+      <!-- flux -->
+      <main id="app"></main>
+      <script src="scripts/bundle.js"></script>
+	</body>
+</html>
