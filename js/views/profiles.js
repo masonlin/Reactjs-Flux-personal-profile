@@ -1,12 +1,8 @@
 var React = require('react');
 
-var ProfileStore = require('../stores/profile-store');
+//var ProfileStore = require('../stores/profile-store');
+var ProfileStore = require('../stores/stores');
 
-// function getStateFromStore() {
-//   return {
-//     comments: ProfileStore.getAll()
-//   }
-// }
 
 var Profiles = React.createClass({
   _profileData: "",
@@ -32,9 +28,6 @@ var Profiles = React.createClass({
     xhr.open("GET", "http://127.0.0.1:8080/user/0", true);  //true 表異步
     xhr.send();
 
-    // var status = xhr.status;
-    // var readystate = xhr.readyState;
-    // var data;
   },
 
   onChange: function() {
@@ -58,14 +51,6 @@ var Profiles = React.createClass({
   },
 
   render: function() {
-    // var comments = this.state.comments.map(function(comment, index) {
-    //   return (
-    //     <div className='profile' key={'profile-' + index}>
-    //       {comment.text}
-    //     </div>
-    //   )
-    // });
-
     //console.log("State: " + this.state.getProfileState);
 
     // var name="";
