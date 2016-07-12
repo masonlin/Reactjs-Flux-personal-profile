@@ -1,17 +1,30 @@
 var React = require('react');
-var Comments = require('./views/comments');
-var CommentForm = require('./views/comment-form');
+var ReactDOM = require('react-dom');
+var Profile = require('./views/profiles');
+var Socket = require('./views/sockets');
+//var CommentForm = require('./views/comment-form');
+var ProfileActionCreators = require('./actions/profile-action-creators');
+var SocketActionCreators =  require('./actions/socket-action-creators');
+
+
 
 var App = React.createClass({
+  componentDidMount(){
+    //dirrect call an action
+    //console.log("==1==");
+    ProfileActionCreators.createProfile();
+    SocketActionCreators.createSocket();
+  },
 
   render: function() {
+    //console.log("==0==");
     return (
      <div>
-        <Comments />
-        <CommentForm />
+        <Profile /><br/>
+        <Socket />
      </div>
     );
   }
 });
 
-React.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('app'));
