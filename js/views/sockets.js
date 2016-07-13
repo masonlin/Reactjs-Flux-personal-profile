@@ -8,11 +8,16 @@ var Sockets = React.createClass({
 
   getSocketData: function(){
     //io.connect(http://127.0.0.1);
-    var socket = socketio.connect('http://127.0.0.1');
+    //var socket = socketio.connect('http://127.0.0.1:8081/');
+    var socket = socketio.connect('http://192.168.1.101:8081/');
 
-    socket.on('revMsg', function(data){
-      _socketData = data;
-      this.setState(data);
+    socket.on('clientReceiveMsg', function(data){
+      // console.log('get server msg...');
+      // console.log(data);
+
+      this._socketData = data;
+      //this.setState(data);
+      this.setState(JSON.parse(data));
     }.bind(this));
   },
 

@@ -25,7 +25,8 @@ var Profiles = React.createClass({
                 this.setState({getProfileState: xhr.readyState});
               }.bind(this);      //bind this 後，這個匿名函式裡才能使用 this.setState
 
-    xhr.open("GET", "http://127.0.0.1:8080/user/0", true);  //true 表異步
+    //xhr.open("GET", "http://127.0.0.1:8080/user/0", true);  //true 表異步
+    xhr.open("GET", "http://192.168.1.101:8080/user/0", true);  //true 表異步
     xhr.send();
 
   },
