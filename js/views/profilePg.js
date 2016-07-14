@@ -2,7 +2,7 @@ var React = require('react');
 var ProfileStore = require('../stores/stores');
 
 
-var Profiles = React.createClass({
+var ProfilePG = React.createClass({
   _profileData: "",
 
   getProfile: function(){
@@ -19,9 +19,9 @@ var Profiles = React.createClass({
                 }
 
                 this.setState({getProfileState: xhr.readyState});
-              }.bind(this);      //bind this 後，這個匿名函式裡才能使用 this.setState
+              }.bind(this);
 
-    xhr.open("GET", "http://192.168.1.101:8080/user/0", true);  //true 表異步
+    xhr.open("GET", "http://192.168.1.101:8080/profile/1", true);
     xhr.send();
 
   },
@@ -53,4 +53,4 @@ var Profiles = React.createClass({
   },
 });
 
-module.exports = Profiles;
+module.exports = ProfilePG;
