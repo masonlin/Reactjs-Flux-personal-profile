@@ -1,5 +1,7 @@
 var React = require('react');
 var ProfileStore = require('../stores/stores');
+var clsMasonConf = require('../masonconf');
+var oMasonConf = new clsMasonConf();
 
 
 var ProfilePG = React.createClass({
@@ -21,7 +23,12 @@ var ProfilePG = React.createClass({
                 this.setState({getProfileState: xhr.readyState});
               }.bind(this);
 
-    xhr.open("GET", "http://192.168.1.101:8080/profile/1", true);
+    //xhr.open("GET", "http://192.168.1.101:8080/profile/1", true);
+    if(oMasonConf.isDev == true){
+      xhr.open("GET", "http://192.168.1.101:8080/profile/1", true);
+    }else{
+      xhr.open("GET", "https://mason-restful.herokuapp.com/profile/mason", true);
+    }
     xhr.send();
 
   },
