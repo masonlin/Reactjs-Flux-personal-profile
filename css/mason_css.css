@@ -1,0 +1,26 @@
+span.faa {
+  /*動畫*/
+  animation-duration: 1s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
+  /*轉角度*/
+  -moz-transform:rotate(6deg);
+  -webkit-transform:rotate(6deg);
+  -o-transform:rotate(6deg);
+  -ms-transform:rotate(6deg);
+  transform:rotate(6deg);
+}
+
+@keyframes slidein {
+  from {
+    padding-left: 45%;
+    width: 100%;
+  }
+
+  to {
+    padding-left: 55%;
+    width: 100%;
+  }
+}
