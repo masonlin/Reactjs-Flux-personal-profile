@@ -62,23 +62,38 @@
 	    //dirrect call an action
 	    //console.log("==1==");
 	    ProfileActionCreators.createProfile();
-	    SocketActionCreators.createSocket();
-	    ProfilePGActionCreators.createProfilePG();
+	    // SocketActionCreators.createSocket();
+	    // ProfilePGActionCreators.createProfilePG();
 	  },
 
 	  render: function() {
 	    //console.log("==0==");
 	    return (
-	     React.createElement("div", null, 
-	        'My XHR profile: ', " ", React.createElement(Profile, null), React.createElement("br", null), 
-	        'Socket info: ', " ", React.createElement(Socket, null), React.createElement("br", null), 
-	        'PostgreSQL data: ', " ", React.createElement(ProfilePG, null)
+	     React.createElement("span", null, 
+	        React.createElement(Profile, null)
 	     )
 	    );
 	  }
 	});
 
 	ReactDOM.render(React.createElement(App, null), document.getElementById('app'));
+
+	var ServerTime = React.createClass({displayName: "ServerTime",
+	  componentDidMount(){
+	    SocketActionCreators.createSocket();
+	  },
+
+	  render: function() {
+	    //console.log("==0==");
+	    return (
+	     React.createElement("span", null, 
+	        React.createElement(Socket, null)
+	     )
+	    );
+	  }
+	});
+
+	ReactDOM.render(React.createElement(ServerTime, null), document.getElementById('servertime'));
 
 
 /***/ },
@@ -21427,9 +21442,10 @@
 	  },
 
 	  render: function() {
+	    var myname = (this._profileData ? JSON.parse(this._profileData).name : "")
 	    return (
 	      React.createElement("span", null, 
-	        this._profileData
+	        myname
 	      )
 	    );
 	  },
@@ -21918,9 +21934,10 @@
 	  },
 
 	  render: function() {
+	    var serverTime = (this._socketData ? JSON.parse(this._socketData).time : "");
 	    return (
 	      React.createElement("span", null, 
-	        this._socketData
+	        serverTime
 	      )
 	    );
 	  }

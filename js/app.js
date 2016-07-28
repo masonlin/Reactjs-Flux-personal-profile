@@ -16,20 +16,35 @@ var App = React.createClass({
     //dirrect call an action
     //console.log("==1==");
     ProfileActionCreators.createProfile();
-    SocketActionCreators.createSocket();
-    ProfilePGActionCreators.createProfilePG();
+    // SocketActionCreators.createSocket();
+    // ProfilePGActionCreators.createProfilePG();
   },
 
   render: function() {
     //console.log("==0==");
     return (
-     <div>
-        {'My XHR profile: '} <Profile /><br/>
-        {'Socket info: '} <Socket /><br/>
-        {'PostgreSQL data: '} <ProfilePG />
-     </div>
+     <span>
+        <Profile />
+     </span>
     );
   }
 });
 
 ReactDOM.render(<App />, document.getElementById('app'));
+
+var ServerTime = React.createClass({
+  componentDidMount(){
+    SocketActionCreators.createSocket();
+  },
+
+  render: function() {
+    //console.log("==0==");
+    return (
+     <span>
+        <Socket />
+     </span>
+    );
+  }
+});
+
+ReactDOM.render(<ServerTime />, document.getElementById('servertime'));
