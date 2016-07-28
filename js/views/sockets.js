@@ -44,9 +44,10 @@ var Sockets = React.createClass({
   },
 
   render: function() {
+    var serverTime = (this._socketData ? JSON.parse(this._socketData).time : "");
     return (
       <span>
-        {this._socketData}
+        {serverTime}
       </span>
     );
   }

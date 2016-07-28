@@ -51,9 +51,10 @@ var Profiles = React.createClass({
   },
 
   render: function() {
+    var myname = (this._profileData ? JSON.parse(this._profileData).name : "")
     return (
       <span>
-        {this._profileData}
+        {myname}
       </span>
     );
   },
