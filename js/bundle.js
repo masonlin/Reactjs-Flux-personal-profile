@@ -52,18 +52,54 @@
 	var Profile = __webpack_require__(177);
 	var Socket = __webpack_require__(182);
 	var ProfilePG = __webpack_require__(230);
-	//var CommentForm = require('./views/comment-form');
 
 
+	var PPostgre = React.createClass({displayName: "PPostgre",
+	  componentDidMount(){
+	    ProfilePGActionCreators.createProfilePG();
+	  },
+
+	  render: function() {
+	    return (
+	     React.createElement("span", null, 
+	        React.createElement(ProfilePG, {data_spec: "EMAIL"})
+	     )
+	    );
+	  }
+	});
+
+	ReactDOM.render(React.createElement(PPostgre, null), document.getElementById('myemail'));
+
+	var MyPhone = React.createClass({displayName: "MyPhone",
+	  render: function() {
+	    return (
+	     React.createElement("span", null, 
+	        React.createElement(ProfilePG, {data_spec: "PHONE_NUMBER"})
+	     )
+	    );
+	  }
+	});
+
+	ReactDOM.render(React.createElement(MyPhone, null), document.getElementById('myphone'));
+
+
+	var MyAddr = React.createClass({displayName: "MyAddr",
+	  render: function() {
+	    return (
+	     React.createElement("span", null, 
+	        React.createElement(ProfilePG, {data_spec: "ADDR"})
+	     )
+	    );
+	  }
+	});
+
+	ReactDOM.render(React.createElement(MyAddr, null), document.getElementById('myaddr'));
 
 
 	var App = React.createClass({displayName: "App",
 	  componentDidMount(){
 	    //dirrect call an action
-	    //console.log("==1==");
 	    ProfileActionCreators.createProfile();
-	    // SocketActionCreators.createSocket();
-	    // ProfilePGActionCreators.createProfilePG();
 	  },
 
 	  render: function() {
@@ -78,13 +114,13 @@
 
 	ReactDOM.render(React.createElement(App, null), document.getElementById('app'));
 
+
 	var ServerTime = React.createClass({displayName: "ServerTime",
 	  componentDidMount(){
 	    SocketActionCreators.createSocket();
 	  },
 
 	  render: function() {
-	    //console.log("==0==");
 	    return (
 	     React.createElement("span", null, 
 	        React.createElement(Socket, null)
@@ -21898,13 +21934,10 @@
 	  _socketData: '',
 
 	  getSocketData: function(){
-	    //var socket = socketio.connect('http://192.168.1.101:8081/');
 	    if(oMasonConf.isDev == true){
 	      console.log('===f1===');
-	      var socket = socketio.connect('http://192.168.1.101:8081/');
+	      var socket = socketio.connect('http://192.168.1.101:8080/');
 	    }else{
-	      // var socket = socketio.connect('https://mason-restful.herokuapp.com/');
-	      console.log('===f2===');
 	      var socket = socketio.connect('http://mason-restful.herokuapp.com');
 	    }
 
@@ -29405,7 +29438,7 @@
 	    if(oMasonConf.isDev == true){
 	      xhr.open("GET", "http://192.168.1.101:8080/profile/1", true);
 	    }else{
-	      xhr.open("GET", "https://mason-restful.herokuapp.com/profile/mason", true);
+	      xhr.open("GET", "https://mason-restful.herokuapp.com/profile/Mason_Lin", true);
 	    }
 	    xhr.send();
 
@@ -29430,13 +29463,57 @@
 	  },
 
 	  render: function() {
-	    return (
-	      React.createElement("span", null, 
-	        this._profileData
-	      )
-	    );
+	    var myPhone = this._profileData ? JSON.parse(this._profileData).col2 : "";
+	    var myEmail = this._profileData ? JSON.parse(this._profileData).col3 : "";
+	    var myAddr = this._profileData ? JSON.parse(this._profileData).col5 : "";
+
+	    // return (
+	    //   <div>
+	    //     {this.props.phonenumber}
+	    //   </div>
+	    // );
+
+	    switch(this.props.data_spec) {
+
+	      case "PHONE_NUMBER":
+	        return (
+	          React.createElement("div", null, 
+	            myPhone
+	          )
+	        );
+	        break;
+
+	      case "EMAIL":
+	        return (
+	          React.createElement("div", null, 
+	            myEmail
+	          )
+	        );
+	        break;
+
+	        case "ADDR":
+	          return (
+	            React.createElement("div", null, 
+	              myAddr
+	            )
+	          );
+	          break;
+	      default:
+	    }
+
+
 	  },
 	});
+
+
+	var myPhoneNumber = React.createClass({displayName: "myPhoneNumber",
+	  render: function() {
+	    return (
+	        React.createElement("div", null, this.props.phonenumber)
+	    );
+	  }
+	});
+
 
 	module.exports = ProfilePG;
 

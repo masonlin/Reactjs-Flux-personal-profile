@@ -8,13 +8,10 @@ var Sockets = React.createClass({
   _socketData: '',
 
   getSocketData: function(){
-    //var socket = socketio.connect('http://192.168.1.101:8081/');
     if(oMasonConf.isDev == true){
       console.log('===f1===');
-      var socket = socketio.connect('http://192.168.1.101:8081/');
+      var socket = socketio.connect('http://192.168.1.101:8080/');
     }else{
-      // var socket = socketio.connect('https://mason-restful.herokuapp.com/');
-      console.log('===f2===');
       var socket = socketio.connect('http://mason-restful.herokuapp.com');
     }
 

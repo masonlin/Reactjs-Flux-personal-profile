@@ -27,7 +27,7 @@ var ProfilePG = React.createClass({
     if(oMasonConf.isDev == true){
       xhr.open("GET", "http://192.168.1.101:8080/profile/1", true);
     }else{
-      xhr.open("GET", "https://mason-restful.herokuapp.com/profile/mason", true);
+      xhr.open("GET", "https://mason-restful.herokuapp.com/profile/Mason_Lin", true);
     }
     xhr.send();
 
@@ -52,12 +52,56 @@ var ProfilePG = React.createClass({
   },
 
   render: function() {
-    return (
-      <span>
-        {this._profileData}
-      </span>
-    );
+    var myPhone = this._profileData ? JSON.parse(this._profileData).col2 : "";
+    var myEmail = this._profileData ? JSON.parse(this._profileData).col3 : "";
+    var myAddr = this._profileData ? JSON.parse(this._profileData).col5 : "";
+
+    // return (
+    //   <div>
+    //     {this.props.phonenumber}
+    //   </div>
+    // );
+
+    switch(this.props.data_spec) {
+
+      case "PHONE_NUMBER":
+        return (
+          <div>
+            {myPhone}
+          </div>
+        );
+        break;
+
+      case "EMAIL":
+        return (
+          <div>
+            {myEmail}
+          </div>
+        );
+        break;
+
+        case "ADDR":
+          return (
+            <div>
+              {myAddr}
+            </div>
+          );
+          break;
+      default:
+    }
+
+
   },
 });
+
+
+var myPhoneNumber = React.createClass({
+  render: function() {
+    return (
+        <div>{this.props.phonenumber}</div>
+    );
+  }
+});
+
 
 module.exports = ProfilePG;

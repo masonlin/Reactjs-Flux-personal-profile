@@ -54,6 +54,10 @@ AppDispatcher.register(function(action) {
       Stores.emitChange();
       break;
 
+    case "CREATE_SOCKET_PG":
+      Stores.emitChange();
+      break;
+
     default:
   }
 });

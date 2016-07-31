@@ -13,6 +13,39 @@ span.faa {
   transform:rotate(6deg);
 }
 
+span.fab {
+  /*動畫*/
+  animation-duration: 1s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
+  /*轉角度*/
+  -moz-transform:rotate(-8deg);
+  -webkit-transform:rotate(-8deg);
+  -o-transform:rotate(-8deg);
+  -ms-transform:rotate(-8deg);
+  transform:rotate(-8deg);
+
+  /*字*/
+  color:white;
+}
+
+span.fac {
+  /*動畫*/
+  animation-duration: 1s;
+  animation-name: slideinc;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
+  /*轉角度*/
+  -moz-transform:rotate(-8deg);
+  -webkit-transform:rotate(-8deg);
+  -o-transform:rotate(-8deg);
+  -ms-transform:rotate(-8deg);
+  transform:rotate(-8deg);
+}
+
 @keyframes slidein {
   from {
     padding-left: 45%;
@@ -21,6 +54,18 @@ span.faa {
 
   to {
     padding-left: 55%;
+    width: 100%;
+  }
+}
+
+@keyframes slideinc {
+  from {
+    padding-left: 30%;
+    width: 100%;
+  }
+
+  to {
+    padding-left: 40%;
     width: 100%;
   }
 }

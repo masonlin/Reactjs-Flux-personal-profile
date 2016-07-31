@@ -19,7 +19,6 @@
 		<script src="./build/react-dom.js"></script>
 		<script src="./build/browser.min.js"></script>
 		<!--script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script-->
-
     <script src="./js/jquery-1.11.3.min.js"></script>
 
     <link rel="stylesheet" href="./css/mason_css.css" />
@@ -32,7 +31,7 @@
 				<ul class="container">
 					<li><a href="#top">Top</a></li>
 					<li><a href="#work">Profile</a></li>
-					<li><a href="#portfolio">Portfolio</a></li>
+					<li><a href="#portfolio">Favorite</a></li>
 					<li><a href="#contact">Contact</a></li>
 				</ul>
 			</nav>
@@ -46,17 +45,11 @@
 							<span class="image fit"><img src="images/me2.png" alt="" /></span>
 						</div>
 						<div class="8u 12u(mobile)">
-							  <!-- <header>
-								  <h1>Hi. I'm <strong>Mason Lin</strong>.</h1>
-								</header> -->
-								<header>
-								  <h1 style='display:inline'>Hi. I'm <strong><span id="app"/></strong>.</h1><span class="fa fa-arrow-left faa" aria-hidden="true"> (Data via React + Flux + XHR) </span>
-                  <div id='servertime'/>
-							  </header>
-
-							<!-- <p>And this is my <strong>React.js + Flux + Node.js + PostgreSQL</strong> presentation site, a free, fully responsive HTML5 site template designed by <a href="http://n33.co">AJ</a> for <a href="http://html5up.net">HTML5 UP</a> &amp; released under the <a href="http://html5up.net/license">CCA license</a>.</p> -->
-              <p>&nbsp;&nbsp;&nbsp;&nbsp; I use the pure <strong>JavaScript</strong> to implement this website. The related skills include <strong>React</strong>, <strong>Flux</strong> and <strong>Socket.io</strong> in frontend, I based on a free HTML5/RWD/SPA/ template to construct this page. And the other hand, I use <strong>Node.js</strong> to be the <strong>RESTful</strong> on <strong>Heroku</strong> PaaS, it include the Socket.io to report server time, and provide a <strong>PostgreSQL</strong> service for my profile data.</p>
-							<a href="#work" class="button big scrolly">Personal Infomation</a>
+							<header>
+							  <h1 style='display:inline'>Hi. I'm <strong><span id="app"/></strong>.</h1><span class="fa fa-hand-o-left fa-lg faa" aria-hidden="true"> (Data via React + Flux + XHR) </span>
+						  </header>
+              <p>&nbsp;&nbsp;&nbsp;&nbsp; I used the pure <strong>JavaScript</strong> to modify this website. The related skills include <strong>React</strong>, <strong>Flux</strong> and <strong>Socket.io</strong> in frontend, I based on a free HTML5/RWD/SPA/ template to construct this page. And the other hand, I used <strong>Node.js</strong> to be the <strong>RESTful</strong> on <strong>Heroku</strong> PaaS, it include the Socket.io to report server time, and provide a <strong>PostgreSQL</strong> service for my profile data.</p>
+							<a href="#work" class="button big scrolly">See Personal Infomation</a>
 						</div>
 					</div>
 				</article>
@@ -67,37 +60,42 @@
 			<div class="wrapper style2">
 				<article id="work">
 					<header>
-						<h2>Programming is my life.</h2>
-						<p>Odio turpis amet sed consequat eget posuere consequat.</p>
+						<h2>Personal Information</h2>
+						<p>My contact detail are..</p>
+						<p> </p>
 					</header>
+					<span class="fa fa-hand-o-left fa-lg fac" aria-hidden="true"> (Data via React + Flux + PostgreSQL) </span>
 					<div class="container">
 						<div class="row">
 							<div class="4u 12u(mobile)">
 								<section class="box style1">
-									<span class="icon featured fa-comments-o"></span>
-									<h3>Consequat lorem</h3>
-									<p>Ornare nulla proin odio consequat sapien vestibulum ipsum primis sed amet consequat lorem dolore.</p>
+									<span class="icon featured fa-envelope-o"></span>
+									<h3>E-mail</h3>
+									<h4><a href='mailto:c.c.lin@g.ncu.edu.tw' style="text-decoration:underline;"><span id='myemail'/></a></h4><br>
 								</section>
 							</div>
 							<div class="4u 12u(mobile)">
 								<section class="box style1">
-									<span class="icon featured fa-camera-retro"></span>
-									<h3>Lorem dolor tempus</h3>
-									<p>Ornare nulla proin odio consequat sapien vestibulum ipsum primis sed amet consequat lorem dolore.</p>
+									<span class="icon featured fa-phone"></span>
+									<h3>Phone Number</h3>
+									<h4><a href='tel:886+918419187' style="text-decoration:underline;"><span id='myphone'/></a></h4><br>
 								</section>
 							</div>
 							<div class="4u 12u(mobile)">
 								<section class="box style1">
-									<span class="icon featured fa-thumbs-o-up"></span>
-									<h3>Feugiat posuere</h3>
-									<p>Ornare nulla proin odio consequat sapien vestibulum ipsum primis sed amet consequat lorem dolore.</p>
+									<span class="icon featured fa-map-marker"></span>
+									<h3>Address</h3>
+									<h4><a href='https://www.google.com/maps/place/%E5%8F%B0%E7%81%A3%E6%A1%83%E5%9C%92%E7%B8%A3%E4%B8%AD%E5%A3%A2%E5%B8%82/@24.9578846,121.2218028,14z/data=!4m5!3m4!1s0x346823d6cc50e619:0xa7c534203d5cd0be!8m2!3d24.9721514!4d121.2053963' style="text-decoration:underline;"><span id='myaddr'></a></h4>
 								</section>
 							</div>
+							<header>
+							  <p>If you have any questions, please feel free to contact me.</p>
+						  </header>
 						</div>
 					</div>
 					<footer>
-						<p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p>
-						<a href="#portfolio" class="button big scrolly">See some of my recent work</a>
+						<p>     </p>
+						<a href="#portfolio" class="button big scrolly">See My Favorite</a>
 					</footer>
 				</article>
 			</div>
@@ -106,8 +104,8 @@
 			<div class="wrapper style3">
 				<article id="portfolio">
 					<header>
-						<h2>Here’s some stuff I made recently.</h2>
-						<p>Proin odio consequat  sapien vestibulum consequat lorem dolore feugiat lorem ipsum dolore.</p>
+						<h2>My favorite life.</h2>
+						<p>My leisure activities are almost in the outdoors.</p>
 					</header>
 					<div class="container">
 						<div class="row">
@@ -115,21 +113,21 @@
 								<article class="box style2">
 									<a href="images/Camping2.jpg" class="image featured"><img src="images/Camping2.jpg" alt="" /></a>
 									<h3><a href="images/Camping2.jpg">Camping</a></h3>
-									<p>I love camping</p>
+									<p>Camping give us a freedom space and bunldless sky.</p>
 								</article>
 							</div>
 							<div class="4u 12u(mobile)">
 								<article class="box style2">
 									<a href="images/Outing2.jpg" class="image featured"><img src="images/Outing2.jpg" alt="" /></a>
 									<h3><a href="images/Outing2.jpg">Outing</a></h3>
-									<p>I like outing.</p>
+									<p>If camping is a feast, outing is the congee and side dishes. It's very deliciuos.</p>
 								</article>
 							</div>
 							<div class="4u 12u(mobile)">
 								<article class="box style2">
 									<a href="images/Traveling2.jpg" class="image featured"><img src="images/Traveling2.jpg" alt="" /></a>
 									<h3><a href="images/Traveling2.jpg">Traveling</a></h3>
-									<p>Traveling let me free.</p>
+									<p>Traveling have a lot of surprise, it rich our life.</p>
 								</article>
 							</div>
 						</div>
@@ -138,7 +136,7 @@
 								<article class="box style2">
 									<a href="images/Family.jpg" class="image featured"><img src="images/Family.jpg" alt="" /></a>
 									<h3><a href="images/Family.jpg">Family</a></h3>
-									<p>Do everything with my family.</p>
+									<p>Do everything with my family, it's happiness.</p>
 								</article>
 							</div>
 							<div class="4u 12u(mobile)">
@@ -158,7 +156,7 @@
 						</div>
 					</div>
 					<footer>
-						<p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p>
+						<p>        </p>
 						<a href="#contact" class="button big scrolly">Get in touch with me</a>
 					</footer>
 				</article>
@@ -172,6 +170,8 @@
 						<p>Ornare nulla proin odio consequat sapien vestibulum ipsum sed lorem.</p> -->
 					</header>
 					<div>
+						<h1> Heroku Server Time</h1><span class="fa fa-hand-o-left fa-lg fab" aria-hidden="true"> (Data via React + Flux + Socket.io) </span>
+						<h1><strong><span id='servertime' style='color:white'/></strong></h1>
 						<!-- <div class="row">
 							<div class="12u">
 								<form method="post" action="#">
@@ -214,7 +214,7 @@
 									<!-- <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li> -->
 									<li><a href="https://www.facebook.com/profile.php?id=100001928345725" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
 									<!-- <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li> -->
-									<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://www.linkedin.com/in/mason-lin-1a218bbb" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
 									<!-- <li><a href="#" class="icon fa-tumblr"><span class="label">Tumblr</span></a></li> -->
 									<!-- <li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li> -->
 									<li><a href="https://github.com/masonlin" class="icon fa-github"><span class="label">Github</span></a></li>
@@ -250,76 +250,6 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
-
-
->
-
-			<!--*****************************************
-	    * React
-	    *****************************************-->
-	    <!-- <script type="text/babel">
-
-          var RESTful_myname = React.createClass({
-						_name: "",
-		        getInitialState: function(){
-		          return {
-		            call_step: 1
-		          };
-		        },
-		        componentDidMount: function(){
-		          this.setState({
-		            call_step: 2
-		          });
-		          this.autoSubmit();  //直接向後端要資料
-		        },
-
-		        autoSubmit: function(){
-		          var xhr = new XMLHttpRequest();
-		          //xhr.onreadystatechange = processRequest;
-		          xhr.onreadystatechange = function(){
-		                      if (xhr.readyState == 4) {
-		                        if (xhr.status == 0 || xhr.status == 200) {
-		                          this._name = xhr.responseText;
-															//console.log(xhr);
-		                        } else {
-		                          this._name='wrong';
-		                        }
-		                      }else {
-		                        this._name='';
-		                      }
-
-		                      this.setState({call_step: xhr.readyState});
-		                    }.bind(this);      //bind this 後，這個匿名函式裡才能使用 this.setState
-
-		          xhr.open("GET", "http://127.0.0.1:8080/user/0", true);  //true 表異步
-		          xhr.send();
-
-		          var status = xhr.status;
-		          var readystate = xhr.readyState;
-		          var data;
-		        },
-
-						render: function(){
- 		          console.log("State: " + this.state.call_step);
- 		          var name;
-
-					    if(this._name != ""){
-							  name = JSON.parse(this._name).name;  //parse JSON
-						  }
-
-							return (
-								<div>
-									{"Hi. I'm " + name}.
-								</div>
-							);
-
- 		        }
-
-		      });
-
-					ReactDOM.render(<RESTful_myname />, document.getElementById("myname"));
-
-			</script> -->
 
 			<script src="./js/bundle.js"></script>
 	</body>
